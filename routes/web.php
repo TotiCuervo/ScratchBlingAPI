@@ -13,9 +13,9 @@
 
 Route::get('/', function () {
     return view('app');
+})->name('home');
+
+//this catches any straggling routes
+Route::fallback(function(){
+    return redirect()->route('home');
 });
-
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
-

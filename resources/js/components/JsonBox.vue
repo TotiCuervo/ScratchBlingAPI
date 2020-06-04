@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-gray-300 rounded-lg">
-<!--        <pre class="w-full overflow-auto p-2" style="height:500px;">-->
-<!--        </pre>-->
-        <vue-json-pretty class="w-full overflow-auto p-2 text-black max-h-500" :data='JSON.parse(data)'></vue-json-pretty>
+    <div class="bg-gray-300 rounded-lg p-2">
+        <p v-if="example" class="text-gray-600 pb-2">// {{example}}</p>
+        <vue-json-pretty v-if="isString" class="w-full overflow-auto text-black max-h-500" :data='JSON.parse(data)'></vue-json-pretty>
+        <vue-json-pretty v-else class="w-full overflow-auto text-black max-h-500" :data='data'></vue-json-pretty>
     </div>
 </template>
 
@@ -17,12 +17,14 @@
         components: {
             VueJsonPretty
         },
-        props: ['data']
+        props: ['data', 'example'],
+        computed: {
+            isString() {
+                return typeof(this.data) === "string";
+            }
+        }
     }
 </script>
 
 <style scoped>
-    .vjs-value .vjs-value__string {
-        color: black !important;
-    }
 </style>

@@ -1,0 +1,71 @@
+.post-body {
+    @apply my-10;
+}
+
+.request-header {
+    @apply block text-xl font-bold;
+}
+
+.request-type {
+    @apply text-green-500 mr-4;
+}
+
+.endpoint-description {
+    @apply w-full pr-10 py-2;
+}
+
+.endpoint-example {
+    @apply w-full mt-8;
+}
+
+@screen lg {
+    .endpoint-description {
+        @apply w-7/12;
+    }
+
+    .endpoint-example {
+        @apply w-5/12 m-0;
+    }
+}
+
+/*searchbar*/
+.bar-wrapper {
+    @apply flex flex-1 items-center justify-center;
+}
+
+.bar {
+    @apply border bg-white rounded-full pl-4 pr-2 shadow;
+}
+
+/*form*/
+.dropdown-wrapper {
+    @apply w-full appearance-none block w-full bg-white text-gray-700 border-r border-gray-500 py-2 px-2 leading-tight;
+}
+
+.dropdown-wrapper:focus {
+    @apply outline-none;
+}
+
+.dropdown-list {
+    @apply mt-2 relative bg-white overflow-scroll shadow rounded;
+    max-height: 16rem;
+}
+
+.dropdown-item {
+    @apply p-2 block text-black cursor-pointer transition duration-200 ease-in-out;
+}
+
+.dropdown-item:hover {
+    @apply bg-gray-200;
+}
+
+.form-group {
+    @apply px-3 mb-6;
+}
+
+.title-header {
+    @apply block italic tracking-wide text-gray-700 text-lg font-bold mb-3;
+}
+
+
+

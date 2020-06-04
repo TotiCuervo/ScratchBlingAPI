@@ -2,21 +2,6 @@
 
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 //the Auth api ensures that an api token must be passed in order to access these endpoints
 //the jsonOnly middleware ensures that all requests return as JSON. Due to laravel sometimes returning HTML for responses
 //this is necessary
@@ -28,7 +13,7 @@ Route::group(['namespace' => 'api', 'middleware' => ['jsonOnly', 'auth:api']], f
     //creates new backscratcher
     Route::post('/backscratcher', 'BackScratcherController@store');
     //updates backscratcher
-    Route::put('/backscratcher/{backScratcher}', 'BackScratcherController@update');
+    Route::patch('/backscratcher/{backScratcher}', 'BackScratcherController@update');
     //delete backscratcher if you wanted to
 //    Route::delete('/backscratcher/{backScratcher}', 'BackScratcherController@destroy');
 });

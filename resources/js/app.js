@@ -16,8 +16,8 @@ Vue.use(VueJsonPretty);
 import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard);
 
-
-
+import VueTextareaAutosize from 'vue-textarea-autosize'
+Vue.use(VueTextareaAutosize);
 
 
 

@@ -1,12 +1,14 @@
 <template>
-    <span class="px-2 py-2 bg-gray-300 rounded mt-10 cursor-pointer hover:bg-gray-400 focus:bg-green-400 transition duration-100 ease-in-out" v-clipboard:copy="this.link" v-clipboard:success="alertSuccess">{{this.endpoint}}</span>
+    <div class="px-2 bg-gray-300 rounded cursor-pointer hover:bg-gray-400 focus:bg-green-400 transition duration-100 ease-in-out leading-loose" v-clipboard:copy="this.link" v-clipboard:success="alertSuccess">
+         {{this.window + this.endpoint}}
+    </div>
 </template>
 
 <script>
     export default {
         data() {
             return {
-
+                window: window.location.href
             }
         },
         methods: {

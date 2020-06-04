@@ -27,7 +27,7 @@ class BackScratcherSeeder extends Seeder
 
         DB::table('back_scratchers')->insert([
             'item_name' => 'Nimbus 2001',
-            'item_description' => 'The top of the Scratch Bling range. Capable of previously unseen speed and control. A world-class backscratcher.',
+            'item_description' => 'The top of the Scratch Bling range. Capable of previously unseen speed and control. A world-class back scratcher.',
             'item_size' => 'MD',
             'item_cost' => '120'
         ]);
