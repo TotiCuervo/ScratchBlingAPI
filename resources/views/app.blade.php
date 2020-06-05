@@ -59,11 +59,9 @@
                         </div>
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4" data='[{"id":1,"item_name":"Thunderbolt VII","item_description":"The Thunderbolt VII is produced in Manchester, England, as a competitor to the Firebolt Supreme. Many experts feel that the Thunderbolt VII has sacrificed safety for speed.","item_size":"LG","item_cost":"150.00","created_at":null,"updated_at":null},{"id":2,"item_name":"Shooting Star","item_description":"Much like a shooting star, this backscratcher starts off powerful but after much use will fizzle out.","item_size":"SM","item_cost":"50.00","created_at":null,"updated_at":null},{"id":3,"item_name":"Nimbus 2001","item_description":"The top of the Scratch Blings range. Capable of previously unseen speed and control. A world-class backscratcher.","item_size":"MD","item_cost":"120.00","created_at":null,"updated_at":null},{"id":4,"item_name":"Cleansweep Eleven","item_description":"One of the first of its kind. Very reliable and easy to maintain.","item_size":"MD","item_cost":"75.00","created_at":null,"updated_at":null},{"id":5,"item_name":"Firebolt","item_description":"This state-of-the-art backscratcher sports a streamlined superfine handle of ash, treated with a diamond-hard polish and hand-numbered with its own registration number.","item_size":"XL","item_cost":"200.00","created_at":null,"updated_at":null}]'></json-box>
+                        <json-box class="m-0 lg:m-4" data='[{"id":1,"item_name":"Thunderbolt VII","item_description":"The Thunderbolt VII is produced in Manchester, England, as a competitor to the Firebolt Supreme. Many experts feel that the Thunderbolt VII has sacrificed safety for speed.","item_size":["LG"],"item_cost":"150.00"},{"id":2,"item_name":"Shooting Star","item_description":"Much like a shooting star, this back scratcher starts off powerful but after much use will fizzle out.","item_size":["SM","LG"],"item_cost":"50.00"},{"id":3,"item_name":"Nimbus 2001","item_description":"The top of the Scratch Bling range. Capable of previously unseen speed and control. A world-class back scratcher.","item_size":["MD","LG"],"item_cost":"120.00"},{"id":4,"item_name":"Cleansweep Eleven","item_description":"One of the first of its kind. Very reliable and easy to maintain.","item_size":["SM","MD","LG","XL"],"item_cost":"75.00"},{"id":5,"item_name":"Firebolt","item_description":"This state-of-the-art back scratcher sports a streamlined superfine handle of ash, treated with a diamond-hard polish and hand-numbered with its own registration number.","item_size":["LG","XL"],"item_cost":"200.00"}]'></json-box>
                     </div>
                 </div>
-
-
 
                 {{--Get backscratcher by id--}}
                 <div class="flex flex-wrap border-t py-10">
@@ -77,52 +75,56 @@
 
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4" data='{"id":1,"item_name":"Thunderbolt VII","item_description":"The Thunderbolt VII is produced in Manchester, England, as a competitor to the Firebolt Supreme. Many experts feel that the Thunderbolt VII has sacrificed safety for speed.","item_size":"LG","item_cost":"150.00","created_at":null,"updated_at":null}'></json-box>
+                        <json-box class="m-0 lg:m-4" data='{"id":1,"item_name":"Thunderbolt VII","item_description":"The Thunderbolt VII is produced in Manchester, England, as a competitor to the Firebolt Supreme. Many experts feel that the Thunderbolt VII has sacrificed safety for speed.","item_size":["LG"],"item_cost":"150.00"}'></json-box>
                     </div>
                 </div>
+
                 {{--create new backscratcher--}}
                 <div class="flex flex-wrap border-t py-10">
                     <div class="endpoint-description">
                         <div class="request-header"><i class="request-type">Post</i>Create New Back Scratcher:</div>
-                        <endpoint-button class="w-auto inline-block mt-4" endpoint="api/backscratcher/?item_name={NAME}&item_description={DESCRIPTION}&item_size={SIZE}&item_cost={COST}"></endpoint-button>
+                        <endpoint-button class="w-auto inline-block mt-4" endpoint="api/backscratcher"></endpoint-button>
                         <div class="post-body">
-                            <p>This endpoint creates a new back scratcher when a form of fields are attached to it:
+                            <p>This endpoint creates a new back scratcher when a form of fields are attached to the body of the request.
                             <p class="mt-4">Form:</p>
                             <ul class="list-disc ml-5 mb-4">
                                 <li>item_name: String</li>
                                 <li>item_description: Text</li>
-                                <li>item_size: Acceptable types are SM, MD, LG, XL</li>
-                                <li>item_cost: Decimal</li>
+                                <li>item_size: An <b>array</b> of acceptable types: [SM, MD, LG, XL]</li>
+                                <li>item_cost: Numeric</li>
                             </ul>
                         </div>
-                        <p><b>Example: </b><endpoint-button class="w-auto inline-block" endpoint="api/backscratcher/?item_name=Whomping Willow&item_description=A world class back scratcher. Some say that it could destroy a Firebolt in battle.&item_size=SM&item_cost=100000"></endpoint-button></p>
-
+                        <p><b>Example Body:</b></p>
+                        <json-button data='{"item_name": "Whomping Willow","item_description": "A world class back scratcher. Some say that it could destroy a Firebolt in battle.","item_size": ["SM"],"item_cost": "100000"}'></json-button>
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4" data='{"item_name":"Whomping Willow","item_description":"A world class back scratcher. Some say that it could destroy a Firebolt in battle.","item_size":"SM","item_cost":"100000","id":6}'></json-box>
+                        <json-box class="m-0 lg:m-4" example="result" data='{"item_name":"Whomping Willow","item_description":"A world class back scratcher. Some say that it could destroy a Firebolt in battle.","item_size":"SM","item_cost":"100000","id":6}'></json-box>
                     </div>
                 </div>
+
+
                 {{--update backscratcher--}}
                 <div class="flex flex-wrap border-t py-10">
                     <div class="endpoint-description">
                         <div class="request-header"><i class="request-type">Patch</i>Update Back Scratcher:</div>
-                        <endpoint-button class="w-auto inline-block mt-4" endpoint="api/backscratcher/{ID}/?item_name={NAME}&item_description={DESCRIPTION}&item_size={SIZE}&item_cost={COST}"></endpoint-button>
+                        <endpoint-button class="w-auto inline-block mt-4" endpoint="api/backscratcher/{ID}"></endpoint-button>
                         <div class="post-body">
-                            <p>This endpoint updates a new back scratcher. You must <b>pass the id</b> of the scratcher that you want to update, alongside a form of fields that you wish to update:
+                            <p>This endpoint updates a new back scratcher. You must <b>pass the id</b> of the scratcher that you want to update, alongside a form of fields that you wish to update.
                             <p class="mt-4">Form:</p>
                             <ul class="list-disc ml-5 mb-4">
                                 <li>item_name: String</li>
                                 <li>item_description: Text</li>
-                                <li>item_size: Acceptable types are SM, MD, LG, XL</li>
-                                <li>item_cost: Decimal</li>
+                                <li>item_size: An <b>array</b> of acceptable types: [SM, MD, LG, XL]</li>
+                                <li>item_cost: Numeric</li>
                             </ul>
                             <p>When sending the request, you can pass along only the fields that you wish to update.</p>
                         </div>
-                        <p><b>Example: </b><endpoint-button class="w-auto inline-block" endpoint="api/backscratcher/1/?item_description=Not safe for kids. Keep out of reach&item_size=SM"></endpoint-button></p>
-
+                        <p><b>Example Request: </b><endpoint-button class="w-auto inline-block" endpoint="api/backscratcher/1"></endpoint-button>
+                        <p class="mt-4"><b>Example Body:</b></p>
+                        <json-button data='{"item_description": "Not safe for kids. Keep out of reach.","item_size": ["SM"]}'></json-button>
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4" data='{"id":1,"item_name":"Thunderbolt VII","item_description":"Not safe for kids. Keep out of reach","item_size":"MD","item_cost":"150.00"}'></json-box>
+                        <json-box class="m-0 lg:m-4" example="result" data='{"id":1,"item_name":"Thunderbolt VII","item_description":"Not safe for kids. Keep out of reach.","item_size":["SM"],"item_cost":"150.00"}'></json-box>
                     </div>
                 </div>
             </div>
@@ -167,7 +169,7 @@
                                 </tr>
                                 <tr>
                                     <td class="border px-4 py-2">item_size</td>
-                                    <td class="border px-4 py-2">Will return all back scratchers with the size that is <b>exactly the same</b> as the filtered size</td>
+                                    <td class="border px-4 py-2">Will return all back scratchers that contain the filtered size</td>
                                 </tr>
                                 <tr>
                                     <td class="border px-4 py-2">item_cost</td>
@@ -183,7 +185,7 @@
 
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4" example="api/backscratcher?filter[item_cost]=100" data='[{"id":2,"item_name":"Shooting Star","item_description":"Much like a shooting star, this back scratcher starts off powerful but after much use will fizzle out.","item_size":"SM","item_cost":"50.00","created_at":null,"updated_at":null},{"id":4,"item_name":"Cleansweep Eleven","item_description":"One of the first of its kind. Very reliable and easy to maintain.","item_size":"MD","item_cost":"75.00","created_at":null,"updated_at":null}]'></json-box>
+                        <json-box class="m-0 lg:m-4" example="api/backscratcher?filter[item_cost]=100" data='[{"id":2,"item_name":"Shooting Star","item_description":"Much like a shooting star, this back scratcher starts off powerful but after much use will fizzle out.","item_size":["SM","LG"],"item_cost":"50.00"},{"id":4,"item_name":"Cleansweep Eleven","item_description":"One of the first of its kind. Very reliable and easy to maintain.","item_size":["SM","MD","LG","XL"],"item_cost":"75.00"}]'></json-box>
                     </div>
                 </div>
                 {{--Sort--}}
@@ -201,7 +203,7 @@
                         <p><b>Example: </b><endpoint-button class="w-auto inline-block" endpoint="api/backscratcher?sort=item_cost,item_size"></endpoint-button></p>
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4" example="api/backscratcher?sort=item_cost" data='[{"id":2,"item_name":"Shooting Star","item_description":"Much like a shooting star, this back scratcher starts off powerful but after much use will fizzle out.","item_size":"SM","item_cost":"50.00","created_at":null,"updated_at":null},{"id":4,"item_name":"Cleansweep Eleven","item_description":"One of the first of its kind. Very reliable and easy to maintain.","item_size":"MD","item_cost":"75.00","created_at":null,"updated_at":null},{"id":3,"item_name":"Nimbus 2001","item_description":"The top of the Scratch Bling range. Capable of previously unseen speed and control. A world-class backscratcher.","item_size":"MD","item_cost":"120.00","created_at":null,"updated_at":null},{"id":1,"item_name":"Thunderbolt VII","item_description":"The Thunderbolt VII is produced in Manchester, England, as a competitor to the Firebolt Supreme. Many experts feel that the Thunderbolt VII has sacrificed safety for speed.","item_size":"LG","item_cost":"150.00","created_at":null,"updated_at":null},{"id":5,"item_name":"Firebolt","item_description":"This state-of-the-art back scratcher sports a streamlined superfine handle of ash, treated with a diamond-hard polish and hand-numbered with its own registration number.","item_size":"XL","item_cost":"200.00","created_at":null,"updated_at":null}]'></json-box>
+                        <json-box class="m-0 lg:m-4" example="api/backscratcher?sort=item_cost" data='[{"id":2,"item_name":"Shooting Star","item_description":"Much like a shooting star, this back scratcher starts off powerful but after much use will fizzle out.","item_size":["SM","LG"],"item_cost":"50.00"},{"id":4,"item_name":"Cleansweep Eleven","item_description":"One of the first of its kind. Very reliable and easy to maintain.","item_size":["SM","MD","LG","XL"],"item_cost":"75.00"},{"id":3,"item_name":"Nimbus 2001","item_description":"The top of the Scratch Bling range. Capable of previously unseen speed and control. A world-class back scratcher.","item_size":["MD","LG"],"item_cost":"120.00"},{"id":1,"item_name":"haha so stinky","item_description":"Not safe for kids. Keep out of reach.","item_size":["SM","MD"],"item_cost":"150.00"},{"id":5,"item_name":"Firebolt","item_description":"This state-of-the-art back scratcher sports a streamlined superfine handle of ash, treated with a diamond-hard polish and hand-numbered with its own registration number.","item_size":["LG","XL"],"item_cost":"200.00"},{"id":6,"item_name":"Whomping Willow","item_description":"A world class back scratcher. Some say that it could destroy a Firebolt in battle.","item_size":["SM"],"item_cost":"100000.00"}]'></json-box>
                     </div>
                 </div>
                 {{--Fields--}}
@@ -215,7 +217,7 @@
                         <p><b>Example: </b><endpoint-button class="w-auto inline-block" endpoint="api/backscratcher?fields[back_scratchers]=item_name,item_cost,item_size"></endpoint-button></p>
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4" data='[{"item_name":"Thunderbolt VII","item_cost":"150.00","item_size":"LG"},{"item_name":"Shooting Star","item_cost":"50.00","item_size":"SM"},{"item_name":"Nimbus 2001","item_cost":"120.00","item_size":"MD"},{"item_name":"Cleansweep Eleven","item_cost":"75.00","item_size":"MD"},{"item_name":"Firebolt","item_cost":"200.00","item_size":"XL"}]'></json-box>
+                        <json-box class="m-0 lg:m-4" data='[{"item_name":"Shooting Star","item_cost":"50.00","item_size":["SM","LG"]},{"item_name":"Nimbus 2001","item_cost":"120.00","item_size":["MD","LG"]},{"item_name":"Cleansweep Eleven","item_cost":"75.00","item_size":["SM","MD","LG","XL"]},{"item_name":"Firebolt","item_cost":"200.00","item_size":["LG","XL"]},{"item_name":"Whomping Willow","item_cost":"100000.00","item_size":["SM"]},{"item_name":"haha so stinky","item_cost":"150.00","item_size":["SM","MD"]}]'></json-box>
                     </div>
                 </div>
                 {{--All together--}}
@@ -226,10 +228,10 @@
                         <div class="post-body">
                             <p>The best part about these options is that you can mix and match them! Combine them to create powerful and meaningful requests.</p>
                         </div>
-                        <p><b>Example: </b><endpoint-button class="w-auto inline-block" endpoint="api/backscratcher?filter[item_size]=MD&sort=item_cost&?fields[back_scratchers]=item_name,item_cost,item_size"></endpoint-button></p>
+                        <p><b>Example: </b><endpoint-button class="w-auto inline-block" endpoint="api/backscratcher?filter[item_cost]=100&fields[back_scratchers]=item_name,item_cost,item_size"></endpoint-button></p>
                     </div>
                     <div class="endpoint-example">
-                        <json-box class="m-0 lg:m-4"  data='[{"item_name":"Cleansweep Eleven","item_cost":"75.00","item_size":"MD"},{"item_name":"Nimbus 2001","item_cost":"120.00","item_size":"MD"}]'></json-box>
+                        <json-box class="m-0 lg:m-4"  data='[{"item_name":"Shooting Star","item_cost":"50.00","item_size":["SM","LG"]},{"item_name":"Cleansweep Eleven","item_cost":"75.00","item_size":["SM","MD","LG","XL"]}]'></json-box>
                     </div>
                 </div>
             </div>

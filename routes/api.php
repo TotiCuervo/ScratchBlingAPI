@@ -2,9 +2,7 @@
 
 use Illuminate\Http\Request;
 
-//the Auth api ensures that an api token must be passed in order to access these endpoints
-//the jsonOnly middleware ensures that all requests return as JSON. Due to laravel sometimes returning HTML for responses
-//this is necessary
+
 Route::group(['namespace' => 'api', 'middleware' => ['jsonOnly', 'auth:api']], function () {
     //gets all backscratchers
     Route::get('/backscratcher', 'BackScratcherController@index');

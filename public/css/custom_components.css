@@ -34,7 +34,7 @@
 }
 
 .bar {
-    @apply border bg-white rounded-full pl-4 pr-2 shadow;
+    @apply border bg-white rounded-full pl-4 pr-2 border border-black;
 }
 
 /*form*/

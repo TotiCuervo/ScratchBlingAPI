@@ -1,5 +1,5 @@
 <template>
-    <div class="px-2 bg-gray-300 rounded cursor-pointer hover:bg-gray-400 focus:bg-green-400 transition duration-100 ease-in-out leading-loose" v-clipboard:copy="this.link" v-clipboard:success="alertSuccess">
+    <div class="px-2 bg-gray-300 rounded cursor-pointer hover:bg-gray-400 transition duration-100 ease-in-out leading-loose" v-clipboard:copy="this.link" v-clipboard:success="alertSuccess">
          {{this.window + this.endpoint}}
     </div>
 </template>

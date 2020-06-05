@@ -18,7 +18,6 @@ class CreateBackScratchersTable extends Migration
             $table->string('item_name');
             $table->text('item_description');
             $table->string('item_size')->unsigned();
-            $table->foreign('item_size')->references('size')->on('item_sizes')->onDelete('cascade');
             $table->decimal('item_cost', 15, 2);
             $table->timestamps();
         });
