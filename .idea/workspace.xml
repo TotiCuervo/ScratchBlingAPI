@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a97bb917-3149-4a3e-8e47-f17e7a43f855" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Version 2.0/EndpointPlayground2.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/custom_components.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom_components.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/CardIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CardIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app2.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +173,7 @@
       <workItem from="1591023043245" duration="2632000" />
       <workItem from="1591031388719" duration="2943000" />
       <workItem from="1591057557270" duration="50405000" />
-      <workItem from="1591281462511" duration="35104000" />
+      <workItem from="1591281462511" duration="35223000" />
     </task>
     <servers />
   </component>

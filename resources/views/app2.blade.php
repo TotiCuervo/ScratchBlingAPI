@@ -25,7 +25,7 @@
         <div class="mainContent">
             <!--header-->
             <div class="header">
-                <div class="hidden md:block text-white font-bold italic text-lg">ScratchBling API</div>
+                <div class="block text-white font-bold italic text-lg">ScratchBling API</div>
             </div>
         </div>
     </div>
