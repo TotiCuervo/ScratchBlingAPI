@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('app');
+    return view('app2');
 })->name('home');
 
 //this catches any straggling routes

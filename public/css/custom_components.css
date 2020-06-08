@@ -67,5 +67,83 @@
     @apply block italic tracking-wide text-gray-700 text-lg font-bold mb-3;
 }
 
+.wrapper {
+    @apply flex relative
+}
+
+.wrapper .sidebar {
+    @apply fixed h-full text-white hidden z-20;
+    background-color: #27303f;
+    width: 280px;
+}
+
+.wrapper .sidebar.sidebar-hidden {
+    @apply hidden !important;
+}
+
+.wrapper .sidebar.sidebar-show {
+    @apply block !important;
+}
+
+@screen lg{
+    .wrapper .sidebar {
+        @apply block;
+    }
+
+}
+
+.wrapper .sidebar .sidebar-group{
+    @apply py-4;
+}
+
+.wrapper .sidebar .sidebar-group-title{
+    @apply text-yellow-500 font-bold px-8;
+    margin-bottom: 10px;
+}
+
+.wrapper .sidebar .sidebar-item {
+    @apply text-gray-500 w-full cursor-pointer font-bold py-3 px-10 transition ease-in-out duration-200 flex justify-start items-center;
+}
+
+.wrapper .sidebar .sidebar-item:focus {
+    @apply outline-none;
+}
+
+.wrapper .sidebar .sidebar-item:hover {
+    @apply  bg-white text-black;
+}
+
+.wrapper .sidebar .sidebar-item .svg-inline--fa {
+    @apply mr-4;
+}
+
+.wrapper .sidebar .sidebar-item.sidebar-item-selected {
+    @apply text-white !important;
+}
+
+.wrapper .sidebar .sidebar-item.sidebar-item-selected:hover {
+    @apply text-black !important;
+}
+
+
+/*main content*/
+
+.wrapper .mainContent {
+    @apply w-full;
+}
+
+.wrapper .mainContent.sidebar-hidden {
+    @apply ml-0 !important;
+}
+
+.wrapper .mainContent .header{
+    @apply border-b flex justify-between items-center;
+    padding: 20px 40px;
+    background-color: #27303f;
+}
+
+.wrapper .mainContent .dashboard {
+    margin: 40px;
+}
 
 

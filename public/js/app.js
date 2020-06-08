@@ -2273,6 +2273,187 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      window: window.location.href + 'api/',
+      point: window.location.href + 'api/',
+      clicked: false,
+      requestType: 'Get',
+      responseType: 'Card',
+      apiToken: '',
+      requestOptions: ['Get', 'Post', 'Patch'],
+      requestData: [{
+        'message': 'Nothing yet!'
+      }],
+      tempBody: '{\n' + '    "item_name": "",\n' + '    "item_description": "",\n' + '    "item_cost": "00.0",\n' + '    "item_size": [""]\n' + '}'
+    };
+  },
+  methods: {
+    sendRequest: function sendRequest() {
+      var _this = this;
+
+      if (this.endpoint.includes(this.window + 'backscratcher')) {
+        //this sets the authorization token so we don't have to worry about it
+        axios.defaults.headers.common['Authorization'] = "Bearer " + this.apiToken;
+
+        if (this.requestType === 'Get') {
+          axios.get(this.point).then(function (response) {
+            _this.requestData = response.data;
+          })["catch"](function (error) {
+            _this.requestData = error.response.data;
+          });
+        }
+
+        if (this.requestType === 'Post') {
+          axios.post(this.point, JSON.parse(this.body)).then(function (response) {
+            _this.requestData = response.data;
+          })["catch"](function (error) {
+            _this.requestData = error.response.data;
+          });
+        }
+
+        if (this.requestType === 'Patch') {
+          //because patching is kind of weird when you need to send api keys, I have to go about saving the data in a different way
+          var form = new FormData();
+
+          for (var key in JSON.parse(this.body)) {
+            //specifically what is difficult is passing an array. We need to save it to the FormatData as a string
+            //so we go through each size and appends it to formData as a string
+            if (key === 'item_size') {
+              var sizes = JSON.parse(this.body)[key];
+
+              for (var i = 0; i < sizes.length; i++) {
+                form.append('item_size[' + i + ']', sizes[i]);
+              }
+            } else {
+              //for everything else we just append it as normal
+              form.append(key, JSON.parse(this.body)[key]);
+            }
+          } //also because patch does not work in axios for whatever reason, we need to pass the patch method in the headers
+
+
+          form.append('_method', 'PATCH');
+          axios.post(this.point, form).then(function (response) {
+            _this.requestData = response.data;
+          })["catch"](function (error) {
+            _this.requestData = error.response.data;
+          });
+        }
+      }
+    },
+    setRequestType: function setRequestType(type) {
+      //sets the request dropdown and then closess it
+      this.requestType = type;
+      this.clicked = false;
+    },
+    resetBody: function resetBody() {
+      //resets the request body if mistakes
+      this.body = '{\n' + '    "item_name": "",\n' + '    "item_description": "",\n' + '    "item_cost": "00.0",\n' + '    "item_size": [""]\n' + '}';
+    }
+  },
+  computed: {
+    endpoint: {
+      get: function get() {
+        return this.point;
+      },
+      set: function set(value) {
+        //checks to see if an input includes the url, and if it does it detaches that to consume the endpoint
+        if (value.replace(this.window, '').includes(this.window)) {
+          this.point = value.replace(this.window, '');
+        } else {
+          //id it does not check out then it assumes that it is a valid input
+          this.point = value;
+        }
+      }
+    },
+    body: {
+      get: function get() {
+        return this.tempBody;
+      },
+      set: function set(value) {
+        this.tempBody = value;
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37943,7 +38124,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "w-full md:w-3/4 rounded overflow-hidden shadow-lg bg-white md:mx-2 mb-4"
+        "w-full md:w-1/4  rounded overflow-hidden shadow-lg bg-white md:mx-2 mb-4"
     },
     [
       _c("div", { staticClass: "flex flex-wrap h-full" }, [
@@ -38547,6 +38728,302 @@ var render = function() {
     ],
     1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _c("div", { staticClass: "w-full bg-white rounded-b" }, [
+      _c("div", { staticClass: "flex flex-wrap px-6 py-4" }, [
+        _c("div", { staticClass: "w-full md:w-1/2 px-6 py-4" }, [
+          _c("div", { staticClass: "w-full pb-2" }, [
+            _c(
+              "label",
+              { staticClass: "block text-gray-700 text-sm font-bold mb-2" },
+              [_vm._v("Request Type")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "bar-wrapper" }, [
+              _c("div", { staticClass: "w-full bar rounded pl-0" }, [
+                _c("div", { staticClass: "flex items-center py-2" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "relative overflow-visible h-8 mr-2",
+                      class: { "z-20": _vm.clicked }
+                    },
+                    [
+                      _c("div", { staticClass: "dropdown-wrapper w-24" }, [
+                        _c(
+                          "div",
+                          { staticClass: "flex items-center justify-between" },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "w-full cursor-pointer appearance-none bg-transparent border-none text-gray-700 mr-3 px-2 leading-tight focus:outline-none",
+                                on: {
+                                  click: function($event) {
+                                    _vm.clicked = !_vm.clicked
+                                  }
+                                }
+                              },
+                              [_vm._v(_vm._s(_vm.requestType))]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: !_vm.clicked,
+                                    expression: "!clicked"
+                                  }
+                                ]
+                              },
+                              [_c("i", { staticClass: "fas fa-angle-up" })]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.clicked,
+                                    expression: "clicked"
+                                  }
+                                ]
+                              },
+                              [_c("i", { staticClass: "fas fa-angle-down" })]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm.clicked
+                        ? _c("div", { staticClass: "dropdown-list" }, [
+                            _c(
+                              "ul",
+                              _vm._l(_vm.requestOptions, function(request) {
+                                return _c("li", [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass: "dropdown-item",
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.setRequestType(request)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(_vm._s(request)),
+                                      _vm.requestType === request
+                                        ? _c(
+                                            "span",
+                                            { staticClass: "float-right" },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-check"
+                                              })
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    ]
+                                  )
+                                ])
+                              }),
+                              0
+                            )
+                          ])
+                        : _vm._e()
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-key" }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.apiToken,
+                        expression: "apiToken"
+                      }
+                    ],
+                    staticClass:
+                      "w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none",
+                    attrs: { type: "text", placeholder: "Api Token" },
+                    domProps: { value: _vm.apiToken },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.apiToken = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.clicked
+              ? _c("button", {
+                  staticClass:
+                    "fixed inset-0 h-screen w-screen cursor-default z-10",
+                  attrs: { tabindex: "-1" },
+                  on: {
+                    click: function($event) {
+                      _vm.clicked = false
+                    }
+                  }
+                })
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "w-full py-2" },
+            [
+              _c(
+                "label",
+                { staticClass: "block text-gray-700 text-sm font-bold mb-2" },
+                [_vm._v("Request")]
+              ),
+              _vm._v(" "),
+              _c("textarea-autosize", {
+                staticClass:
+                  "rounded border border-black w-full p-3 outline-none",
+                attrs: { rows: "1" },
+                model: {
+                  value: _vm.endpoint,
+                  callback: function($$v) {
+                    _vm.endpoint = $$v
+                  },
+                  expression: "endpoint"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "w-full py-2" },
+            [
+              _c("div", { staticClass: "w-full mb-2" }, [
+                _c(
+                  "label",
+                  { staticClass: "text-gray-700 text-sm font-bold mb-2" },
+                  [_vm._v("Body")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "transition float-right ease-in-out duration-300 flex-shrink-0 text-xs py-1 px-2 rounded bg-blue-500 hover:bg-blue-600 text-white focus:outline-none",
+                    on: { click: _vm.resetBody }
+                  },
+                  [_vm._v("Reset")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("textarea-autosize", {
+                staticClass:
+                  "w-full rounded border-black border p-3 outline-none transition duration-200 ease-in-out",
+                class: { "bg-gray-300": _vm.requestType === "Get" },
+                attrs: { rows: "5", disabled: _vm.requestType === "Get" },
+                model: {
+                  value: _vm.body,
+                  callback: function($$v) {
+                    _vm.body = $$v
+                  },
+                  expression: "body"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-full pt-2" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "w-full transition ease-in-out duration-300 flex-shrink-0 text-sm py-2 px-2 rounded bg-blue-500 hover:bg-blue-600 text-white focus:outline-none",
+                on: { click: _vm.sendRequest }
+              },
+              [_vm._v("Send")]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "w-full md:w-1/2 pt-10 md:p-0" },
+          [
+            _c("json-box", {
+              staticClass: "shadow h-full",
+              attrs: { data: _vm.requestData }
+            })
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "w-full px-6 py-10 flex flex-wrap" },
+      [
+        !(_vm.requestData instanceof Array)
+          ? _c("card-index", {
+              class: {
+                "lg:w-1/4": _vm.requestData.length > 1,
+                "lg:w-1/4": _vm.requestData.length === 1
+              },
+              attrs: { data: _vm.requestData }
+            })
+          : _vm._l(_vm.requestData, function(scratcher, key) {
+              return _c("card-index", {
+                key: key,
+                class: {
+                  "lg:w-1/4": _vm.requestData.length > 1,
+                  "lg:w-1/4": _vm.requestData.length === 1
+                },
+                attrs: { data: scratcher }
+              })
+            })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51001,7 +51478,8 @@ var map = {
 	"./components/EndpointPlayground.vue": "./resources/js/components/EndpointPlayground.vue",
 	"./components/ExampleComponent.vue": "./resources/js/components/ExampleComponent.vue",
 	"./components/JsonBox.vue": "./resources/js/components/JsonBox.vue",
-	"./components/JsonButton.vue": "./resources/js/components/JsonButton.vue"
+	"./components/JsonButton.vue": "./resources/js/components/JsonButton.vue",
+	"./components/Version 2.0/EndpointPlayground2.vue": "./resources/js/components/Version 2.0/EndpointPlayground2.vue"
 };
 
 
@@ -51062,8 +51540,8 @@ var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
 
 files.keys().map(function (key) {
   return vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(key.split('/').pop().split('.')[0], files(key)["default"]);
-}); // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('endpoint-playground-2', __webpack_require__(/*! ./components/Version 2.0/EndpointPlayground2 */ "./resources/js/components/Version 2.0/EndpointPlayground2.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -51530,6 +52008,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_JsonButton_vue_vue_type_template_id_12cfb1e5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_JsonButton_vue_vue_type_template_id_12cfb1e5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Version 2.0/EndpointPlayground2.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/Version 2.0/EndpointPlayground2.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EndpointPlayground2_vue_vue_type_template_id_a2d57938_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true& */ "./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true&");
+/* harmony import */ var _EndpointPlayground2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EndpointPlayground2.vue?vue&type=script&lang=js& */ "./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EndpointPlayground2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EndpointPlayground2_vue_vue_type_template_id_a2d57938_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EndpointPlayground2_vue_vue_type_template_id_a2d57938_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "a2d57938",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Version 2.0/EndpointPlayground2.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EndpointPlayground2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./EndpointPlayground2.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EndpointPlayground2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true& ***!
+  \****************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EndpointPlayground2_vue_vue_type_template_id_a2d57938_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Version 2.0/EndpointPlayground2.vue?vue&type=template&id=a2d57938&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EndpointPlayground2_vue_vue_type_template_id_a2d57938_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EndpointPlayground2_vue_vue_type_template_id_a2d57938_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
