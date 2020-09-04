@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a97bb917-3149-4a3e-8e47-f17e7a43f855" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-    </list>
+    <list default="true" id="a97bb917-3149-4a3e-8e47-f17e7a43f855" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +180,7 @@
       <workItem from="1593113194463" duration="177000" />
       <workItem from="1594923177360" duration="409000" />
       <workItem from="1594923777237" duration="1389000" />
-      <workItem from="1599174697715" duration="1654000" />
+      <workItem from="1599174697715" duration="1819000" />
     </task>
     <servers />
   </component>
