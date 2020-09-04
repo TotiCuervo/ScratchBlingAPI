@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a97bb917-3149-4a3e-8e47-f17e7a43f855" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ScatchBlingL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ScatchBlingL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +119,8 @@
       <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-query-builder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
     </include_path>
   </component>
   <component name="ProjectId" id="1cisKojAimmCI7qpCQIDW6Ho1pb" />
@@ -180,7 +185,7 @@
       <workItem from="1593113194463" duration="177000" />
       <workItem from="1594923177360" duration="409000" />
       <workItem from="1594923777237" duration="1389000" />
-      <workItem from="1599174697715" duration="1228000" />
+      <workItem from="1599174697715" duration="1594000" />
     </task>
     <servers />
   </component>
