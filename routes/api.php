@@ -12,6 +12,7 @@ Route::group(['namespace' => 'api', 'middleware' => ['jsonOnly', 'auth:api']], f
     Route::post('/backscratcher', 'BackScratcherController@store');
     //updates backscratcher
     Route::patch('/backscratcher/{backScratcher}', 'BackScratcherController@update');
+
     //delete backscratcher if you wanted to
 //    Route::delete('/backscratcher/{backScratcher}', 'BackScratcherController@destroy');
 });

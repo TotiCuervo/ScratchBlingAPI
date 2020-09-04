@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a97bb917-3149-4a3e-8e47-f17e7a43f855" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/BackScratcherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/BackScratcherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/CardIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CardIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +128,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -173,7 +178,14 @@
       <workItem from="1591023043245" duration="2632000" />
       <workItem from="1591031388719" duration="2943000" />
       <workItem from="1591057557270" duration="50405000" />
-      <workItem from="1591281462511" duration="35960000" />
+      <workItem from="1591281462511" duration="36221000" />
+      <workItem from="1591816851316" duration="1515000" />
+      <workItem from="1593061459094" duration="134000" />
+      <workItem from="1593061708367" duration="772000" />
+      <workItem from="1593113194463" duration="177000" />
+      <workItem from="1594923177360" duration="409000" />
+      <workItem from="1594923777237" duration="1389000" />
+      <workItem from="1599174697715" duration="433000" />
     </task>
     <servers />
   </component>
@@ -199,7 +211,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/CardIndex.vue</url>
           <line>1</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>

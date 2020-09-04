@@ -10,9 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     {{--Styls--}}
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
+    <script src="{{ secure_asset('js/app.js') }}" defer></script>
 
     {{--fontawesome--}}
     <script src="https://kit.fontawesome.com/7d75c9db00.js" crossorigin="anonymous"></script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full md:w-1/4  rounded overflow-hidden shadow-lg bg-white md:mx-2 mb-4">
+    <div class="w-full md:w-1/4 rounded overflow-hidden shadow-lg bg-white md:mx-2 mb-4">
         <div class="flex flex-wrap h-full">
             <div class="w-full px-6 py-4">
                 <!--Name-->
